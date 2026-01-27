@@ -9,6 +9,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import requests
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import (
     accuracy_score,
@@ -55,6 +56,21 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
+
+
+@st.cache_data
+def fetch_dataset_from_github():
+    """
+    Fetch the dataset from GitHub repository
+    """
+    url = "https://raw.githubusercontent.com/Vedika-4041/bank-marketing-ml-project/main/bank.csv"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.content
+    except requests.exceptions.RequestException as e:
+        st.error(f"Error fetching dataset: {str(e)}")
+        return None
 
 
 def load_model(model_name):
@@ -262,11 +278,34 @@ def main():
     )
 
     st.sidebar.markdown("---")
+
+    # Dataset download button
+    st.sidebar.subheader("📥 Download Sample Dataset")
+    st.sidebar.markdown("""
+    Download the bank marketing dataset to test the application:
+    """)
+
+    # Fetch and provide download button
+    dataset_content = fetch_dataset_from_github()
+    if dataset_content:
+        st.sidebar.download_button(
+            label="⬇️ Download bank.csv",
+            data=dataset_content,
+            file_name="bank.csv",
+            mime="text/csv",
+            help="Click to download the sample dataset from GitHub"
+        )
+        st.sidebar.caption("Click the button above to download the dataset, then upload it using the file uploader.")
+    else:
+        st.sidebar.error("Unable to fetch dataset from GitHub")
+
+    st.sidebar.markdown("---")
     st.sidebar.info("""
     **Instructions:**
     1. Select a classification model
-    2. Upload test data (CSV format)
-    3. View predictions and metrics
+    2. Download the sample dataset (optional)
+    3. Upload test data (CSV format)
+    4. View predictions and metrics
 
     **Required Columns:**
     age, job, marital, education, default, balance, housing, loan,
