@@ -278,7 +278,11 @@ python models/logistic_regression.py
 ---
 
 **Submitted by:** PATIL VEDIKA BHAGWANRAO (2024DC04014)
+
 **Course:** Machine Learning - Assignment 2
+
 **Program:** M.Tech Data Science and Engineering
+
 **Institution:** BITS Pilani (WILP)
+
 **Date:** February 2026
