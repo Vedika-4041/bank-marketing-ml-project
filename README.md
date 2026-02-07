@@ -1,10 +1,10 @@
 # Machine Learning Assignment - 2
 
-**Student Name:** Vedika Patil
+**Student Name:** PATIL VEDIKA BHAGWANRAO
 
 **BITS ID:** 2024DC04014
 
-**Program:** M.Tech (AIML/DSE)
+**Program:** M.Tech in Data Science and Engineering
 
 **Institution:** BITS Pilani (WILP)
 
@@ -54,6 +54,7 @@ This solution will help the bank reduce marketing costs by targeting high-probab
 8. **loan:** Has personal loan? (categorical: yes, no, unknown)
 
 **Campaign Contact Data:**
+
 9. **contact:** Contact communication type (categorical: cellular, telephone)
 
 10. **day:** Last contact day of the month (numeric)
@@ -71,6 +72,7 @@ This solution will help the bank reduce marketing costs by targeting high-probab
 16. **poutcome:** Outcome of previous marketing campaign (categorical: failure, nonexistent, success)
 
 **Target Variable:**
+
 17. **deposit:** Has the client subscribed to a term deposit? (binary: yes, no)
 
 ### Data Preprocessing
@@ -275,8 +277,8 @@ python models/logistic_regression.py
 
 ---
 
-**Submitted by:** Vedika Patil (2024DC04014)
+**Submitted by:** PATIL VEDIKA BHAGWANRAO (2024DC04014)
 **Course:** Machine Learning - Assignment 2
-**Program:** M.Tech (AIML/DSE)
+**Program:** M.Tech Data Science and Engineering
 **Institution:** BITS Pilani (WILP)
-**Date:** January 2026
+**Date:** February 2026
